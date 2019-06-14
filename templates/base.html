@@ -9,6 +9,11 @@
 	<title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
+	{% if request.user %}
+	  <div>
+			Empresa: {{request.user.employee.company}}
+	  </div>
+	{% endif %}
 	<div class="container">
 	{% block main %}
 	
