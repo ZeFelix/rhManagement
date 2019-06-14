@@ -2,7 +2,14 @@
 
 {% block main %}
 Ola!
+{{user.employee.name}}
+<a href="{% url 'employees:list' %}"> Gerenciar funcionarios</a>
 
 <a href="{% url 'logout' %}">Logout</a>
+{% if user.employee.company %}
+    <a href="{% url 'companies:company_update' user.employee.company.id %}">Editar Empresa</a>
+{% else %}
+    <a href="{% url 'companies:company_create' %}">Criar Empresa</a>
+{% endif %}
 
 {% endblock main %}

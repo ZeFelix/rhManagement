@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1>Employees</h1>
+<ul>
+    {% for employee in object_list %}
+        <li>
+            <a href="{% url 'employees:update' employee.id %}">{{ employee}}</a>
+            <a href="{% url 'employees:delete' employee.id %}">Delete</a>
+        </li>
+    {% empty %}
+        <li>No employees yet.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'employees:new' %}">Criar</a>
+{% endblock main %}
