@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('companies/', include('apps.companies.urls')),
     path('departments/', include('apps.departments.urls')),
-    path('employees/', include('apps.employees.urls')),
     path('documents/', include('apps.documents.urls')),
+    path('employees/', include('apps.employees.urls')),
+    path('overtime-records/', include('apps.overtime_records.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

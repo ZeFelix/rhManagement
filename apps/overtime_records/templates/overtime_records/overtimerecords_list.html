@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1>Horas Extras</h1>
+<ul>
+    {% for overtime in object_list %}
+    <li>
+        <a href="{% url 'overtime_records:update' overtime.pk %}">
+            {{ overtime}} : {{overtime.hours}}
+        </a>
+        <a href="{% url 'overtime_records:delete' overtime.pk %}">deletar</a>
+    </li>
+    {% empty %}
+    <li>No orvertimes yet.</li>
+    {% endfor %}
+</ul>
+<br>
+<a href="{% url 'overtime_records:new' %}">Criar</a>
+
+{% endblock main %}

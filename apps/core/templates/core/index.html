@@ -11,6 +11,9 @@ Ola!
     <li>
         <a href="{% url 'departments:list' %}"> Gerenciar departamentos</a>
     </li>
+    <li>
+        <a href="{% url 'overtime_records:list' %}"> Gerenciar Horas Extras</a>
+    </li>
 </ul>
 
 {% if user.employee.company %}
