@@ -5,4 +5,18 @@
     {{ form.as_p }}
     <input type="submit" value="Update">
 </form>
+<br>
+{% if object %}
+    <a href="{% url 'documents:new' object.id %}">Adicionar documento</a>
+{% endif %}
+<br>
+<p>Lista de Documentos</p>
+<ul>
+    {% for document in object.document_set.all %}
+    <li>
+        <a href="{{ document.file.url }}" target="_blank">{{document}}</a>    
+    </li>
+    {% endfor %}
+</ul>
+
 {% endblock main %}
